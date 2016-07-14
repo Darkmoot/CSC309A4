@@ -1,5 +1,8 @@
 body {
     margin: 0;
+    padding: 0;
+    font-size: 100%;
+    width: 100%;
 }
 
 * {
@@ -7,10 +10,43 @@ body {
     text-decoration: none;
 }
 
+/* Logo */
+
+
+h1 a#logo {
+    display:block;
+    font-size: 64px;
+    text-align: center;
+    letter-spacing: 32px;
+    position: relative;
+    margin-top: 1%;
+    margin-left: 44%;
+    margin-right: 45%;
+    width: 208px;
+    height: 72px;
+    color: #D4AF37;
+    background-color: #FFFFFF;
+    padding: 8px;
+    border: 8px solid;
+
+}
+
+#fullwidth, .fullwidth, .parties {
+    margin-left: 45%;
+}
+
+
+
 ul {
     list-style-type: none;
     padding-left: 0;
 }
+
+div#features-wrapper {
+
+}
+
+/* Profile picture */
 
 #features img {
     display: block;
@@ -18,45 +54,54 @@ ul {
     height: 200px;
 }
 
+/* top search/menu */
 
-header h1 {
-    position: relative;
-    text-align: left;
-    width: 100%;
-    height: 40px;
+form {
+    display: inline-block;
+    padding: 16px;
 }
 
-nav {
+input {
+    color: #D4AF37;
+    background-color: #FFFFFF;
+}
+
+nav#main-nav {
     position: relative;
     top:0;
     left:0;
     right:0;
     bottom:0;
+    color: #D4AF37;
     background-color: black;
     width: 100%;
+    height: 48px;
     text-align:center;
 /*    height:40px;*/
-    padding:10px 20px;
+    padding:10px 10px;
 }
 
-nav a {
-    font-size:14px;
-    margin:10px 0;
+nav#main-nav a, a {
+    display: inline-block;
+    font-size:16px;
     height:20px;
+    width: auto;
     padding:12px 10px;
-    color: #aaa;
+    color: #D4AF37;
     text-decoration:none;
-    color: aliceblue;
 }
 
-nav a:hover{
-    background-color:#333;
+nav#main-nav a:hover, a:hover{
+    font-weight: 16px;
+    color: #000000;
+    background-color: #D4AF37;;
 }
 
 .full-width {
     display: inline-block;
     text-align: center;
 }
+
 
 /*
 .one-third-width {
