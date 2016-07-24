@@ -4,11 +4,11 @@ username text UNIQUE not null CONSTRAINT uname_constraint CHECK (length(username
 password text not null CONSTRAINT pw_constraint CHECK (password != '' AND length(password) < 17),
 name text not null CONSTRAINT name_constraint CHECK (length(name) < 101),
 postalcode text not null,
-rating integer default 0,
-numrate integer default 0
+rating integer default 0
 );
 
 CREATE INDEX user_pcode_index ON Users(postalcode);
+CREATE INDEX user_rating_index ON Users(rating);
 
 CREATE TABLE Parties (
 partyid integer primary key autoincrement,
