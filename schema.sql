@@ -88,7 +88,7 @@ ON DELETE CASCADE
 
 /* Matches a review to a reviewer and a raid */
 CREATE TABLE Reviewed (
-revieweeid INTEGER REFERENCES Users(userid)
+reviewerid INTEGER REFERENCES Users(userid)
 ON DELETE CASCADE,
 raidid INTEGER REFERENCES Raids(raidid)
 ON DELETE CASCADE,
@@ -123,7 +123,7 @@ skill INTEGER CONSTRAINT skill_constraint CHECK (skill > 0 AND skill < 6)
 
 /* Specific party hosting specific raid */
 CREATE TABLE Hosting (
-userid INTEGER REFERENCES parties(partyid)
+partyid INTEGER REFERENCES parties(partyid)
 ON DELETE CASCADE,
 raidid INTEGER REFERENCES raids(raidid)
 ON DELETE CASCADE
