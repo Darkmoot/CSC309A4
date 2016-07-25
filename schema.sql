@@ -4,9 +4,11 @@ username VARCHAR(16) UNIQUE NOT NULL,
 password VARCHAR(16) NOT NULL,
 name VARCHAR(100) NOT NULL,
 postalcode CHAR(7) NOT NULL,
-rating INTEGER default 0
+rating INTEGER default 0,
+admin CHAR(1) default 'n'
 );
 
+CREATE INDEX admin_index ON Users(admin);
 CREATE INDEX user_pcode_index ON Users(postalcode);
 CREATE INDEX user_rating_index ON Users(rating);
 

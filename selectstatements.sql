@@ -17,6 +17,13 @@ SELECT raidid FROM Attending WHERE userid = !!userid here!!;
 /* Returns all user ids of a user's friends */
 SELECT friendid FROM Friends_with WHERE userid = !!userid here!!;
 
+/* Returns all user ids of admins */
+SELECT userid FROM Users WHERE admin = 'y' OR admin = 'Y';
+
+/* Returns the admin status of a specific user ID. Admins should be marked
+'y' or 'Y' */
+SELECT admin FROM Users WHERE userid = !!user id here!!;
+
 /* -------- RAID STUFF -------- */
 /* Returns all raids */
 SELECT * FROM Raids;
