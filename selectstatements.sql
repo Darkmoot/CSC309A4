@@ -29,8 +29,12 @@ SELECT userid FROM Attending WHERE raidid = !!raid id here!!;
 
 
 /* -------- GAMES STUFF -------- */
-/* Returns all games with specified min and max num of players, and difficulty level */
-SELECT * FROM Games WHERE minplayers >= !!minimum number of players!! AND maxplayers <= !!max num of players!!;
+/* Returns all games with specified min and max num of players, difficulty level and rating */
+SELECT * FROM Games
+WHERE minplayers >= !!minimum number of players!!
+AND maxplayers <= !!max num of players!!
+AND difficulty/numdiff <= !!max difficulty!!
+AND rating/numrate >= !!min rating!!;
 
 /* Returns all game ids of a specified game category.
 To specify multiple categories, use UNION on multiple calls to this SELECT
@@ -39,6 +43,9 @@ SELECT gameid FROM OfCategory WHERE gamecategory = "Cards"
 UNION
 SELECT gameid FROM OfCategory WHERE gamecategory = "Strategy"; */
 SELECT gameid FROM OfCategory WHERE gamecategory = "!!game category!!";
+
+/* Returns all game categories of a specific game */
+SELECT gamecategory FROM OfCategory WHERE gameid = !!game id here!!;
 
 /* Returns all game categories */
 SELECT * FROM GameCategory;
