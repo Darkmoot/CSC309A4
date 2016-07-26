@@ -60,7 +60,7 @@ CREATE INDEX gamecategory_index ON OfCategory(gamecategory);
 
 CREATE TABLE RaidReviews (
 reviewid SERIAL PRIMARY KEY,
-review VARCHAR(2000)
+review VARCHAR(5000)
 );
 
 CREATE TABLE Messages (
@@ -114,7 +114,7 @@ CREATE INDEX reviewed_raidid_index ON Reviewed(raidid);
 
 /* Specific user member of specific party */
 CREATE TABLE Member_of (
-userid INTEGER REFERENCES users(userid)
+userid INTEGER REFERENCES Users(userid)
 ON DELETE CASCADE,
 partyid INTEGER REFERENCES Parties(partyid)
 ON DELETE CASCADE
@@ -122,6 +122,17 @@ ON DELETE CASCADE
 
 CREATE INDEX memberof_userid_index ON Member_of(userid);
 CREATE INDEX memberof_partyid_index ON Member_of(partyid);
+
+/* User admins party */
+CREATE TABLE AdminsParty (
+  userid INTEGER REFERENCES Users(userid)
+  ON DELETE CASCADE,
+  partyid INTEGER REFERENCES Parties(partyid)
+  ON DELETE CASCADE
+);
+
+CREATE INDEX creates_userid_index ON Creates(userid);
+CREATE INDEX creates_partyid_index ON Creates(partyid);
 
 /* Specific user owns specific game */
 CREATE TABLE Owns (

@@ -106,3 +106,6 @@ SELECT * FROM Parties WHERE reqskill >= !!required skill level!! AND reqrating >
 
 /* Returns all raid ids a party is/has hosting/hosted */
 SELECT raidid FROM Hosting WHERE partyid = !!party id here!!;
+
+/* Returns the user ids that are capable of admining a specific Party */
+SELECT userid FROM AdminsParty WHERE partyid = !!party id here!!;
