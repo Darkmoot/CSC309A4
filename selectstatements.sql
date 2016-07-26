@@ -34,6 +34,9 @@ SELECT partyid FROM Hosting WHERE raidid = !!raidid here!!;
 /* Returns all userids of people attending a raid */
 SELECT userid FROM Attending WHERE raidid = !!raid id here!!;
 
+/* Returns all raids in general area */
+SELECT raidid FROM Raids WHERE generalarea = '!!general area!!';
+
 
 /* -------- GAMES STUFF -------- */
 /* Returns all games with specified min and max num of players, difficulty level and rating */

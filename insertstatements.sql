@@ -1,6 +1,6 @@
 /* Statement to create a new user */
-INSERT INTO Users(userid, username, password, name, postalcode, rating, admin)
-VALUES (DEFAULT, '!!username!!', '!!password!!', '!!name!!', '!!postal code!!', DEFAULT, 'n');
+INSERT INTO Users(userid, username, password, name, generalarea, rating, admin)
+VALUES (DEFAULT, '!!username!!', '!!password!!', '!!name!!', '!!generalarea!!', DEFAULT, 'n');
 
 /* Statement to create a new party
 Also setting the creator of the party,
@@ -19,8 +19,8 @@ Note that raiddate should be input in this format: '2016-7-31'
 And raidtime should be input as '13:00:00'
 */
 BEGIN TRANSACTION;
-INSERT INTO Raids(raidid, raidname, address, postalcode, raiddate, raidtime)
-VALUES (DEFAULT, '!!raidname!!', '!!address!!', '!!postalcode!!', '!!raiddate!!', '!!raidtime!!');
+INSERT INTO Raids(raidid, raidname, address, generalarea, raiddate, raidtime)
+VALUES (DEFAULT, '!!raidname!!', '!!address!!', '!!generalarea!!', '!!raiddate!!', '!!raidtime!!');
 INSERT INTO Hosting(partyid, raidid)
 VALUES (!!partyid!!, currval('Raids_raidid_seq'));
 /* Sets all members of a party to Attending the raid */

@@ -3,13 +3,13 @@ userid SERIAL PRIMARY KEY,
 username VARCHAR(16) UNIQUE NOT NULL,
 password VARCHAR(16) NOT NULL,
 name VARCHAR(100) NOT NULL,
-postalcode CHAR(7) NOT NULL,
+generalarea VARCHAR(30) NOT NULL,
 rating INTEGER default 0,
 admin CHAR(1) default 'n'
 );
 
 CREATE INDEX admin_index ON Users(admin);
-CREATE INDEX user_pcode_index ON Users(postalcode);
+CREATE INDEX user_pcode_index ON Users(generalarea);
 CREATE INDEX user_rating_index ON Users(rating);
 
 CREATE TABLE Parties (
@@ -24,12 +24,12 @@ CREATE TABLE Raids (
 raidid SERIAL PRIMARY KEY,
 raidname VARCHAR(100) NOT NULL,
 address VARCHAR(100) NOT NULL,
-postalcode CHAR(7) NOT NULL,
+generalarea VARCHAR(30) NOT NULL,
 raiddate DATE NOT NULL,
 raidtime TIME NOT NULL
 );
 
-CREATE INDEX raid_pcode_index ON Raids(postalcode);
+CREATE INDEX raid_pcode_index ON Raids(generalarea);
 
 CREATE TABLE Games (
 gameid SERIAL PRIMARY KEY,
