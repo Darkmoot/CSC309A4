@@ -90,6 +90,10 @@ VALUES (!!userid!!, !!gameid!!, !!skill!!);
 INSERT INTO Attending (userid, raidid)
 VALUES (!!userid!!, !!raidid!!);
 
-/* Sets a friend as being a friend with another user */
+/* Sets a friend as being a friend with another user
+Note that depending on how we want to implement Friending people, it
+may be a good idea to insert twice for each friendship made, with the userids
+switched around in the parameters (duplicate entries saying that user1 is friends
+with user2 and user2 is friends with user1)*/
 INSERT INTO Friends_with (userid, friendid)
 VALUES (!!userid!!, !!friendid!!);
